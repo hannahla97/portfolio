@@ -15,10 +15,11 @@ export const Home = () => {
       width: "full",
       px: "16px",
       h: "screen",
-      bg: "amber.400",
+      pos: "relative",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
+      overflowX: "hidden",
       lg: {
         px: "12px",
         h: "680px",
@@ -26,12 +27,30 @@ export const Home = () => {
         mt: "72px"
       }
     })}>
+      <img className={css({
+        pos: "absolute",
+        top: 0,
+        zIndex: 0,
+        left: 0,
+        w: "full",
+        h: "full",
+        filter: "grayscale(100%)",
+        objectFit: "cover",
+        opacity: "0.6"
+      })}
+        src={`./src/assets/home.jpg`}
+        ></img>
+      <div
+        className={css({ pos: "absolute", top: 0, zIndex: 0, left: 0, w: "full", h: "full" })}
+        style={{ backgroundImage: "linear-gradient(90deg, rgba(250,250,250,1) 0%, rgba(0,0,0,0) 100%)" }}>
+      </div>
       <div className={css({
         width: "full",
         display: "flex",
         flexFlow: "column",
         gap: "8px",
         maxW: "500px",
+        zIndex: 10,
         lg: {
           gap: "12px",
           maxW: "1000px",
@@ -51,11 +70,11 @@ export const Home = () => {
           <h5 className={css({ pl: "16px", lg: { pl: "24px" } })}>{`"${CONTENT.description}",`}</h5>
           <p>{`"skills": [`}</p>
           <div>
-          {
-            CONTENT.skills.map((skill, index) => (
-              <h5 key={`home-skill-${index}`} className={css({ pl: "16px", lg: { pl: "24px" } })}>{`"${skill}",`}</h5>
-            ))
-          }
+            {
+              CONTENT.skills.map((skill, index) => (
+                <h5 key={`home-skill-${index}`} className={css({ pl: "16px", lg: { pl: "24px" } })}>{`"${skill}",`}</h5>
+              ))
+            }
           </div>
           <p>{`]`}</p>
         </div>

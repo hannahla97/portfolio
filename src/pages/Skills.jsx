@@ -9,17 +9,17 @@ const SKILLS = [
   {
     title: "web",
     Icon: WebIcon,
-    description: "in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at."
+    description: "Over 3 years of experience with various web frameworks and libraries, including React, Vue and Next."
   },
   {
     title: "mobile",
     Icon: PhoneIcon,
-    description: "in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at."
+    description: "Skilled in developing mobile apps with React Native."
   },
   {
     title: "design",
     Icon: DesignIcon,
-    description: "in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at."
+    description: "Passionate about UI/UX. Had freelance experience in graphic designing, with knowledge about customer journey and A/B testing."
   }
 ]
 

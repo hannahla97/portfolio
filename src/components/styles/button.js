@@ -5,6 +5,7 @@ export const buttonStyle = cva({
     display: "flex",
     flexFlow: "row",
     textStyle: "md",
+    cursor: "pointer",
     lg: {
       textStyle: "2xl"
     }

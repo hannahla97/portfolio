@@ -5,6 +5,8 @@ import { Decorator } from './components/Decorator';
 import { Skills } from './pages/Skills';
 import { Experience } from './pages/Experience';
 import { Home } from './pages/Home';
+import { Projects } from './pages/Projects';
+import { SVGLineHr } from './components/Line';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,15 +19,20 @@ function App() {
       display: "flex",
       flexFlow: "column",
       alignItems: "center",
-      gap: "32px",
+      gap: "40px",
       lg: {
-        gap: "48px"
+        gap: "60px"
       }
     })}>
       <Header />
       <Home />
       <Skills />
+      {/* <Projects /> */}
       <Experience />
+      <div className={css({ my: "24px", w: "full", textAlign: "center" })}>
+        <SVGLineHr className={css({ w: "full" })} />
+        <p>2024 - lakimhanh97@gmail.com</p>
+      </div>
     </div>
   )
 }

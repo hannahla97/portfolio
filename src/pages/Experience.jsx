@@ -3,31 +3,52 @@ import { Layout } from "./Layout"
 import { Fragment } from "react"
 import { Decorator } from "@src/components/Decorator"
 import { IconDisplay } from "@src/components/IconDisplay"
-import { DesignIcon, PhoneIcon, WebIcon } from "@src/components/icon"
+import { DominosIcon, EFIcon, SLCIcon } from "@src/components/icon"
 import { SVGLineVr } from "@src/components/Line"
+import { UQIcon } from "@src/components/icon/UQIcon"
 
 const EXP = [
   {
-    company: "Company",
-    title: "Software Engineer",
-    from: new Date(2021, 5),
-    to: new Date(2023, 7),
-    Icon: WebIcon,
-    description: "in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at."
+    company: "EnergyFlex",
+    title: "Full-stack Developer",
+    from: new Date(2023, 7),
+    to: undefined,
+    Icon: EFIcon,
+    description: "Building web & mobile application for this innovative start-up that provides solution for making everyone renewable ready.",
+    stack: ["Next.js", "React Native", "Zustand", "GraphQL (Apollo)", "Prisma"]
   },
   {
-    company: "Company",
+    company: "Domino's Pizza",
     title: "Software Engineer",
     from: new Date(2021, 5),
     to: new Date(2023, 7),
-    Icon: WebIcon,
-    description: "in aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis tincidunt id aliquet risus feugiat in ante metus dictum at."
+    Icon: DominosIcon,
+    description: "Worked with team(s) to build next-gen online ordering web & mobile platform.",
+    stack: ["React.js", "React Native", "Redux", "GraphQL (Apollo)"]
+  },
+  {
+    company: "The University of Queensland",
+    title: "Web Application Developer",
+    from: new Date(2020, 0),
+    to: new Date(2021, 5),
+    Icon: UQIcon,
+    description: "Built and refactored a range of MVP web applications and tools for education purpose.",
+    stack: ["React.js", "Vue", "Mobx", "Node", "Express", "PostgreSQL", "MongoDB"]
+  },
+  {
+    company: "Student Life Care",
+    title: "UI/UX Designer",
+    from: new Date(2018, 6),
+    to: new Date(2019, 5),
+    Icon: SLCIcon,
+    description: "Developed solutions for customer journey, user experience flow, navigation system for new student utilities mobile app.",
+    stack: ["Adobe Photoshop", "Adobe Illustrator", "Adobe XD", "InVision"]
   },
 ]
 
 const MONTH = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 
-const ExperienceTile = ({ company, title, from, to, Icon, description }) => {
+const ExperienceTile = ({ company, title, from, to, Icon, description, stack }) => {
   const [fromMonth, fromYear] = [from.getMonth(), from.getFullYear()]
   const [toMonth, toYear] = [to?.getMonth(), to?.getFullYear()]
 
@@ -49,7 +70,12 @@ const ExperienceTile = ({ company, title, from, to, Icon, description }) => {
         <h3>{company}</h3>
         <h4>{title}</h4>
         <h5>{`${fromDate} - ${toDate}`}</h5>
-        <p className={css({ display: "none", mb: "4px", lg: { display: "block", mb: "6px" } })}>{description}</p>
+        <div>
+          <p className={css({ display: "none", lg: { display: "block" } })}>
+            {description}
+          </p>
+          <p className={css({ mb: "4px", lg: { mb: "6px" } })}>Tech stack: {stack.join(" - ")}</p>
+        </div>
       </div>
     </div>
   )
