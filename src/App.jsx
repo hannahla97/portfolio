@@ -1,7 +1,5 @@
-import { useState } from 'react'
 import { css } from "@style/css";
 import { Header } from './components/Header';
-import { Decorator } from './components/Decorator';
 import { Skills } from './pages/Skills';
 import { Experience } from './pages/Experience';
 import { Home } from './pages/Home';
@@ -9,7 +7,6 @@ import { Projects } from './pages/Projects';
 import { SVGLineHr } from './components/Line';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <div className={css({
