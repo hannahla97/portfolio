@@ -10,5 +10,6 @@ export default defineConfig({
       "@src": path.resolve(__dirname, "./src"),
       "@style": path.resolve(__dirname, "./styled-system")
     }
-  }
+  },
+  base: "/portfolio/"
 })
